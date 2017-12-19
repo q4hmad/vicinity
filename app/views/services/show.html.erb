@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%= flash_messages %>
+<h2>Service</h2>
 
 <p>
-  <strong>Type:</strong>
-  <%= @service.type %>
+  <strong>Name:</strong>
+  <%= @product.name%>
 </p>
 
 <p>
   <strong>Detail:</strong>
-  <%= @service.detail %>
+  <%= @product.detail%>
 </p>
+
 
 <p>
   <strong>Price:</strong>
-  <%= @service.price %>
+  	$<%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+<%= link_to 'Edit', edit_service_path(@service), class: "btn btn-warning" %>
+<%= link_to "Back", services_path, class: "btn btn-default" %>
