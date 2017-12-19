@@ -17,12 +17,15 @@
          <td class="col-md-2"><%= service.name %></td>
          <td class="col-md-2"><%= service.detail %></td>
          <td class="col-md-2">$<%= service.price %></td>
-      
+
          <td class="col-md-4">
 
             <%= link_to 'Show', service_path(service), class: "btn btn-info" %>
+            <% if user_signed_in? %>
             <%= link_to 'Edit', edit_service_path(service), class: "btn  btn-warning" %>
             <%= link_to 'Destroy', service_path(service), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+           <% end %>
+
          </td>
        </tr>
 
