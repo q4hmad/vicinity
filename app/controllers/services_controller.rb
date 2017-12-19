@@ -1,11 +1,12 @@
 class ServicesController < ApplicationController
-  
+
  def index
    @services = Service.all
 
  end
 
  def show
+   @service = Service.find(params[:id])
  end
 
  def new
@@ -13,6 +14,7 @@ class ServicesController < ApplicationController
  end
 
  def edit
+   @service = Service.find(params[:id])
  end
 
  def create
@@ -26,6 +28,7 @@ class ServicesController < ApplicationController
  end
 
  def update
+   @service = Service.find(params[:id])
    if @service.update(service_params)
      redirect_to @service, notice: 'Service was successfully updated.'
    else
@@ -44,6 +47,6 @@ class ServicesController < ApplicationController
  end
 
  def service_params
-   params.require(:service).permit(:type, :detail, :price)
+   params.require(:service).permit(:name, :detail, :price)
  end
 end
