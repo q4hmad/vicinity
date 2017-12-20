@@ -11,13 +11,23 @@ user2 = User.create(username: 'Qudsia',
 								    password: 'password1234',
 								    password_confirmation: 'password1234')
 user2.add_role(:client)
-1.upto() do |i|
-	Product.create(name: "monitor #{i}",
-								 price: 600 * i,
-								 user: user1)
+user3 = User.create(username: 'Byron',
+								    email: 'client2@gmail.com',
+								    password: 'password1234',
+								    password_confirmation: 'password1234')
+user2.add_role(:client)
+
+5.times do |index|
+  Service.create!(name: Faker::Job.title,
+                  detail: Faker::Lorem.sentence(20, false, 0).chop,
+                  price: Faker::Commerce.price,
+                  user: user2)
 end
-1.upto(5) do |i|
-	Product.create(name: "keyboard #{i}",
-								 price: 200 * i,
-								 user: user2)
+
+5.times do |index|
+  Service.create!(name: Faker::Job.title,
+                  detail: Faker::Lorem.sentence(20, false, 0).chop,
+                  price: Faker::Commerce.price,
+                  user: user3)
 end
+p "Created #{Service.count} services."
