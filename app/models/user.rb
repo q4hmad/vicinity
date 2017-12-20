@@ -6,4 +6,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
     has_many :services
 
+  def admin?
+    has_role?(:admin)
+  end
+
+  def client?
+    has_role?(:client)
+  end
+
 end
