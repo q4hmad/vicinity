@@ -1,9 +1,23 @@
-Service.destroy_all
+Role.create(name: :admin)
+Role.create(name: :client)
 
-10.times do |index|
-  service = Service.create!(name: Faker::Job.title,
-                  detail: Faker::Lorem.sentence(20, false, 0).chop,
-                  price: Faker::Commerce.price,
-                  )
+user1 = User.create(username: 'Kirsten',
+								    email: 'admin@gmail.com',
+								    password: 'password1234',
+								    password_confirmation: 'password1234')
+user1.add_role(:admin)
+user2 = User.create(username: 'Qudsia',
+								    email: 'client@gmail.com',
+								    password: 'password1234',
+								    password_confirmation: 'password1234')
+user2.add_role(:client)
+1.upto() do |i|
+	Product.create(name: "monitor #{i}",
+								 price: 600 * i,
+								 user: user1)
 end
-p "Created #{Service.count} services."
+1.upto(5) do |i|
+	Product.create(name: "keyboard #{i}",
+								 price: 200 * i,
+								 user: user2)
+end
