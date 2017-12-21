@@ -14,6 +14,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "index.scss";
+@import "show.scss";
 
 #main-container {
   position: relative;
@@ -48,3 +50,17 @@ td {
   background-color: #808080;
   color: white;
 };
+
+
+.background {
+ padding-left:0;
+ padding-right:0;
+ padding-bottom:0;
+ padding-top:0;
+ margin-top:0;
+ margin-bottom:0;
+ margin-left:0;
+ margin-right:0;
+
+ background-size: cover;
+}

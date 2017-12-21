@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+#apartment1 {
+  height: 105px;
+  background-color: #eee;
+  white-space: nowrap;
+  width: 100%;
+  display: table;
+}
+#apartment2 {
+  height: 105px;
+  background-color: #eee;
+  white-space: nowrap;
+  // width: 150%;
+  display: table;
+  object-fit: none;
+}
+
+.logo-image {
+  vertical-align: middle;
+  padding: 13px;
+  display: table-cell;
+}
+
+.logo-image img {
+  max-width: 100%;
+}
