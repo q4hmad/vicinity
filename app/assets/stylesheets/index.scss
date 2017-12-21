@@ -1,14 +1,31 @@
+h2 {
+  text-align: center;
+  font-style: oblique;
+  font-size: 40px;
+  letter-spacing: 3px;
+  color: #ffff;
+}
+h3 {
+  text-align: center;
+  font-style: oblique;
+  color: #ffff;
+
+}
+
+
 
 .background {
- padding-left:0;
- padding-right:0;
- padding-bottom:0;
- padding-top:0;
- margin-top:0;
- margin-bottom:0;
- margin-left:0;
- margin-right:0;
- width: 160%;
- height: 150%;
- background-size: cover;
+ width: 100%;
+ height: 650px;
+ background-size :cover;
+ position: relative;
+}
+
+.container .inner {
+  position: absolute;
+  width: 50%;
+  background-color: #0009;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
