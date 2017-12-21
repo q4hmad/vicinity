@@ -14,7 +14,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
- @import "index.scss";
+@import "index.scss";
+@import "show.scss";
 
 #main-container {
   position: relative;
