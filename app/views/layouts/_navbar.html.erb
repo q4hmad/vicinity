@@ -4,21 +4,19 @@
   <div id="navbar" class="navbar-collapse collapse">
   <ul class="nav navbar-nav">
     <li class="dropdown">
-      <a href= "/services" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+      <a href= "/services" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
       <ul class="dropdown-menu">
-
-        <li><%= link_to "Services", services_path %></li>
-        <li><%= link_to "New", new_service_path %></li>
-  
-
-
+        <% if !user_signed_in? %>
+        <li><%= link_to "Floor Plans", main_about_path %></li>
+        <li><%= link_to "Amenities", main_amenities_path %></li>
       </ul>
     </li>
+    <% end %>
   </ul>
   <div class="collapse navbar-collapse" id="navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Residents<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <% if user_signed_in? %>
         <li><%= link_to "Edit profile", edit_user_registration_path %></li>
