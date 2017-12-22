@@ -2,6 +2,8 @@
 
 #### _An app for residents of large apartment buildings_
 
+![Main Page](README.png)
+
 This project is built on Rails
 
 #### By _Qudsia Ahmad_
