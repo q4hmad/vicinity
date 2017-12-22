@@ -12,6 +12,12 @@ class User < ApplicationRecord
 
   def client?
     has_role?(:client)
+   end
+
+   def updatable_by?(user)
+    resource.service == user || user.has_role?(:client)
   end
+
+
 
 end
