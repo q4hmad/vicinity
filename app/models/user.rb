@@ -7,11 +7,11 @@ class User < ApplicationRecord
     has_many :services
 
   def admin?
-    has_role?(:admin)
+    role === 'admin'
   end
 
   def client?
-    has_role?(:client)
+    role === 'client'
    end
 
    def updatable_by?(user)
